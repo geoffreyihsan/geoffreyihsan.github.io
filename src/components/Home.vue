@@ -120,7 +120,6 @@ img {
 @media only screen and (max-width: 580px) {
   img {
     object-fit: cover;
-    object-position: top;
     border-radius: 50%;
     height: 200px;
     width: 200px;
