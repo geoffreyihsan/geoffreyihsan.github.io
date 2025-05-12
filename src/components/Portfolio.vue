@@ -110,7 +110,7 @@ export default {
       showDesignModal: false,
       modal_info: {},
       design_modal_info: {},
-      number: 3,
+      number: 6,
       showBtn: "show more",
       shower: 0,
       data: [

@@ -1,6 +1,6 @@
 let info = {
   name: "Geoffrey Ihsan",
-  logo_name: "Geoffrey",
+  logo_name: "Geoff",
   flat_picture: require("./src/assets/me.png"),
   config: {
     use_cookies: true,

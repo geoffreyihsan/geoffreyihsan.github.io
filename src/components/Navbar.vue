@@ -25,9 +25,9 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span style="color: gray; font-size: 23px;"
+          <span style="color: gray; font-size: 23px"
             ><i class="fas fa-bars"></i>
-            </span>
+          </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,7 +36,7 @@
               <a
                 class="nav-link"
                 href="/about"
-                @click.prevent="$emit('scroll', 'about')"
+                @click.prevent="scrollToAndCollapse('about')"
                 :class="{ 'text-light': nightMode }"
                 >About</a
               >
@@ -45,16 +45,16 @@
               <a
                 class="nav-link"
                 href="/skills"
-                @click.prevent="$emit('scroll', 'skills')"
+                @click.prevent="scrollToAndCollapse('skills')"
                 :class="{ 'text-light': nightMode }"
                 >Skills</a
               >
             </li>
-            <li class="nav-item mx-2 ">
+            <li class="nav-item mx-2">
               <a
                 class="nav-link"
                 href="/portfolio"
-                @click.prevent="$emit('scroll', 'portfolio')"
+                @click.prevent="scrollToAndCollapse('portfolio')"
                 :class="{ 'text-light': nightMode }"
                 >Portfolio</a
               >
@@ -115,6 +115,15 @@ export default {
       this.localNightMode = !this.localNightMode;
       this.$emit("nightMode", this.localNightMode);
     },
+    scrollToAndCollapse(section) {
+      this.$emit("scroll", section);
+      const navbar = document.getElementById("navbarSupportedContent");
+      if (navbar && navbar.classList.contains("show")) {
+        // Use Bootstrap's collapse class to hide it
+        const bsCollapse = new bootstrap.Collapse(navbar, { toggle: false });
+        bsCollapse.hide();
+      }
+    },
   },
 };
 </script>
@@ -123,7 +132,7 @@ export default {
 .nav-link {
   font-weight: 500;
 }
-.nav-link:hover{
+.nav-link:hover {
   background-color: rgba(160, 159, 159, 0.336);
 }
 
