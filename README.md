@@ -1,4 +1,4 @@
-# my-portofolio
+# my-portfolio
 
 > Portfolio template using VueJs framework.
 
